@@ -5,6 +5,7 @@ import { API_CONFIG } from "src/config/api.config";
 
 @Injectable()   
 export class AppointmentService {
+
     constructor(private http: HttpClient) { }
 
     basePath = "/appointments";
@@ -23,6 +24,10 @@ export class AppointmentService {
 
     save(appointment: AppointmentDTO) {
         return this.http.post<String>(`${API_CONFIG.baseUrl}${this.basePath}`, appointment);
+    }
+
+    update(appointment: AppointmentDTO) {
+        return this.http.put<void>(`${API_CONFIG.baseUrl}${this.basePath}`, appointment);
     }
 
 

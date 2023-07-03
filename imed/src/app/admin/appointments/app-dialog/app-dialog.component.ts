@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AppointmentDTO } from 'src/app/models/dto/appointment';
 import { AppointmentService } from 'src/services/appointment.service';
 
 @Component({
@@ -10,17 +11,26 @@ import { AppointmentService } from 'src/services/appointment.service';
 })
 export class AppDialogComponent implements OnInit {
 
+  changed = false;
+
   constructor(
     public dialogRef: MatDialogRef<AppDialogComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
     private appointmentService: AppointmentService,
-
+    private formBuilder: FormBuilder,
     ) {
-      this.data = {...data};
+      if (data != null) {
+        this.appointmentForm.patchValue(data);
+      }
     }
 
   ngOnInit(): void {
   }
+
+  appointmentForm = this.formBuilder.group({
+    id: null,
+    observation: ''
+  });
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -37,4 +47,18 @@ export class AppDialogComponent implements OnInit {
     return `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`
   }
 
+
+  updateApp() {
+    let appointment: AppointmentDTO = {
+      ...this.appointmentForm.value as unknown as AppointmentDTO,
+    };
+
+    this.appointmentService.update(appointment).subscribe(response=>{
+      this.changed = false;
+    });
+  }
+
+  onObsChange(value: any){
+    this.changed = true;
+  }
 }

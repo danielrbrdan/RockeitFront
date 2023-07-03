@@ -34,6 +34,7 @@ import { ComponentsComponent } from './components/components.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { ConfigComponent } from './config/config.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AppDialogComponent } from './admin/appointments/app-dialog/app-dialog.component';
 
 
 
@@ -57,7 +58,8 @@ FullCalendarModule.registerPlugins([
     NewProfessionalsDialogComponent,
     ComponentsComponent,
     ConfirmDialogComponent,
-    ConfigComponent
+    ConfigComponent,
+    AppDialogComponent
   ],
   imports: [
     BrowserModule,
