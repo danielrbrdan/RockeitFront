@@ -1,0 +1,25 @@
+
+<form [formGroup]="appointmentForm" (ngSubmit)="saveApp()">
+
+    <p>Agendado às {{data.date | date:'dd/MM/yyyy'}} </p>
+
+    <label for="professionals">Profissional</label>
+    <select name="professionals" formControlName="professional">
+        <option *ngFor="let professional of professionals"
+            [value]="professional.id">{{ professional.name }}</option>
+    </select>
+
+    <label for="patients">Paciente</label>
+    <select name="patients" formControlName="patient">
+        <option *ngFor="let patient of patients"
+            [value]="patient.id">{{ patient.name }}</option>
+    </select>
+
+    <label for="time">Horario</label>
+    <input name="time" type="time" formControlName="appointmentTime" placeholder="HH:mm" />
+
+    <label for="observation">Observações</label>
+    <input name="observation" type="text" formControlName="observation" placeholder="Observações..." />
+
+    <button type="submit">Salvar atendimento</button>
+</form>

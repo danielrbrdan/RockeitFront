@@ -1,0 +1,9 @@
+
+<form [formGroup]="professionalForm" (ngSubmit)="onSubmit()">
+    
+    <input type="text" formControlName="name" placeholder="Nome">
+    <input type="text" formControlName="crm" placeholder="CRM">
+
+    <button *ngIf="!this.data.id" type="submit">Adicionar profissonal</button>
+    <button *ngIf="!!this.data.id" type="submit">Editar profissonal</button>
+</form>

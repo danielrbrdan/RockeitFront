@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <button (click)="addPatient()">Adicionar Paciente</button>
+
+    <h1>Pacientes</h1>
+    <div class="cols">
+        <div *ngFor="let patient of patients;" class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container">
+                <div class="front" style="background-color: #1D1CE5;">
+                    <div class="inner">
+                    <p>{{patient.name}}</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <button class="delete-button" (click)="delete(patient.id)">Excluir</button>
+                        <div  (click)="edit(patient)">
+                            <p>Total de consultas: {{patient.totalAppointment}}</p>
+                            <hr><br>
+                            <p>Clique para editar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+   </div>
+
+

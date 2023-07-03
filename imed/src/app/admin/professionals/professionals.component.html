@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <button (click)="addProfessional()">Adicionar Profissional</button>
+
+    <h1>Profissonais</h1>
+    <div class="cols">
+        <div *ngFor="let professional of professionals;" class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="container" >
+                <div class="front" style="background-color: #1D1CE5;">
+                    <div class="inner">
+                        <p>{{professional.name}}</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <button class="delete-button" (click)="delete(professional.id)">Excluir</button>
+
+                    <div class="inner" (click)="edit(professional)">
+                        <p>CRM: {{professional.crm}}</p>
+                        <hr><br>
+                        <p>Clique para editar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+              
+   </div>
+
+

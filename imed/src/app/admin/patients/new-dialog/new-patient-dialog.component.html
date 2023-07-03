@@ -1,0 +1,31 @@
+
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+
+    <label for="aaaaa">Nome</label>
+    <input name="name" type="text" formControlName="name" placeholder="Nome" />
+
+    <label for="phone">Telefone</label>
+    <input name="phone" type="number" formControlName="phone" placeholder="Telefone" />
+
+    <div formGroupName="address">
+        <label for="postalCode">CEP</label>
+        <input name="postalCode" type="number" formControlName="postalCode" placeholder="CEP" />
+        
+        <label for="country">País</label>
+        <input name="country" type="text" formControlName="country" placeholder="País" />
+
+        <label for="state">Estado</label>
+        <input name="state" type="text" formControlName="state" placeholder="Estado" />
+
+        <label for="city">Cidade</label>
+        <input name="city" type="text" formControlName="city" placeholder="Cidade" />
+
+        <label for="street">Rua</label>
+        <input name="street" type="text" formControlName="street" placeholder="Rua" />
+    </div>
+
+    
+
+    <button *ngIf="!this.data.id" type="submit">Adicionar paciente</button>
+    <button *ngIf="!!this.data.id" type="submit">Editar paciente</button>
+</form>
