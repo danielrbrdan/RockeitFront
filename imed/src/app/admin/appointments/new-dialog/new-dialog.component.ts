@@ -49,7 +49,6 @@ export class NewDialogComponent implements OnInit {
   }
 
   saveApp() {
-    console.log(this.appointmentForm.value);
     let date = new Date(this.data.date);
     let [hour, minute] = this.appointmentForm.value.appointmentTime!.split(':')
     date.setHours(parseInt(hour)-3);

@@ -1,11 +1,15 @@
+<form class="container-fluid w-0 h-0 p-4 m-0"
+    [formGroup]="appointmentForm" (ngSubmit)="updateApp()" >
 
-<form class="container-fluid w-0 h-0 p-4 m-0">
     <p>Consulta de Dr.(a): {{data.patient.name}}</p>
     <p>Consulta com Sr.(a): {{data.professional.name}}</p>
     <p>Agendado às {{formatDateTime(data.dateTime)}}</p>
-    <p> Observações: {{data.observation}}</p>
+    <p class="pt-2">Observações:</p>
+    <input (input)="onObsChange($event.target)" name="observation" type="text" formControlName="observation" placeholder="Observações..." />
 
     <button (click)="deleteApp()" class="bg-danger mb-2 mt-4">Cancelar atendimento</button>
     <hr>
-    <button (click)="onNoClick()">Fechar</button>
+    <button *ngIf="changed" type="submit">Salvar alterações</button>
+    <button *ngIf="!changed" (click)="onNoClick()">Fechar</button>
+
 </form>

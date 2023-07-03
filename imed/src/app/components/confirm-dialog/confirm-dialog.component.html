@@ -1,10 +1,10 @@
 <form class="container-fluid m-0">
   <div class="confirmation-dialog">
     <h2>Tem certeza que deseja excluir?</h2>
-    <div class="button-container">
-      <button class="confirm-button pb-3 w-50 bg-danger" (click)="confirm()">Confirmar</button>
-      <hr>
-      <button class="cancel-button w-50" (click)="cancel()">Cancelar</button>
+    <div class="button-container row mx-2">
+      <button class="cancel-button w-50 col" (click)="cancel()">Cancelar</button>
+      <div class="col-2"></div>
+      <button class="confirm-button pb-3 w-50 bg-danger col" (click)="confirm()">Confirmar</button>
     </div>
   </div>
 </form>
