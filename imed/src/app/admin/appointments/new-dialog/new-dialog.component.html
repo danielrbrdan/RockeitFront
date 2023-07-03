@@ -1,7 +1,7 @@
 
-<form [formGroup]="appointmentForm" (ngSubmit)="saveApp()">
+<form [formGroup]="appointmentForm" (ngSubmit)="saveApp()" class="container-fluid m-0 p-4">
 
-    <p>Agendado às {{data.date | date:'dd/MM/yyyy'}} </p>
+    <h2 class="alert alert-warning pb-2">Agendando às {{data.date | date:'dd/MM/yyyy'}} </h2>
 
     <label for="professionals">Profissional</label>
     <select name="professionals" formControlName="professional">

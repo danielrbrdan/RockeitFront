@@ -1,18 +1,20 @@
-<form [formGroup]="changePassForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="changePassForm" (ngSubmit)="onSubmit()" class="m-auto p-auto mt-4 w-50 ">
 
     <label for="currentPassword">Senha atual</label>
     <input name="currentPassword" type="text" formControlName="currentPassword" placeholder="Senha atual" />
 
     <label for="newPassword">Nova Senha</label>
     <input name="newPassword" type="texte" formControlName="newPassword" placeholder="Nova Senha" />
-    <button type="submit">Alterar senha</button>
+    <button type="submit" class="w-25 mb-4">Alterar senha</button>
 
     <div *ngIf="changePasswordResponse != undefined">
-        <p *ngIf="changePasswordResponse">Senha alterada com sucesso!</p>
-        <p *ngIf="!changePasswordResponse">Senha errada.</p>
+        <p *ngIf="changePasswordResponse" class="alert alert-success">Senha alterada com sucesso!</p>
+        <p *ngIf="!changePasswordResponse" class="alert alert-danger">Senha errada.</p>
     </div>
 
+    <hr>
+    <br>
+    <button (click)="logout()" class="bg-danger w-25">Sair do sistema</button>
 </form>
 
-<button (click)="logout()">Sair</button>
 

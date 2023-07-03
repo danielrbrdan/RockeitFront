@@ -1,7 +1,10 @@
-<div class="confirmation-dialog">
-    <h3>Tem certeza que deseja excluir?</h3>
+<form class="container-fluid m-0">
+  <div class="confirmation-dialog">
+    <h2>Tem certeza que deseja excluir?</h2>
     <div class="button-container">
-      <button class="confirm-button" (click)="confirm()">Confirmar</button>
-      <button class="cancel-button" (click)="cancel()">Cancelar</button>
+      <button class="confirm-button pb-3 w-50 bg-danger" (click)="confirm()">Confirmar</button>
+      <hr>
+      <button class="cancel-button w-50" (click)="cancel()">Cancelar</button>
     </div>
   </div>
+</form>

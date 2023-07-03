@@ -33,6 +33,8 @@ import { NewProfessionalsDialogComponent } from './admin/professionals/new-profe
 import { ComponentsComponent } from './components/components.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { ConfigComponent } from './config/config.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -65,7 +67,8 @@ FullCalendarModule.registerPlugins([
     FullCalendarModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
     
   ],
   providers: [

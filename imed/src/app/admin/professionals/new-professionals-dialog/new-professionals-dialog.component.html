@@ -1,9 +1,21 @@
 
-<form [formGroup]="professionalForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="professionalForm" (ngSubmit)="onSubmit()" class="container-fluid m-0">
+    <div class="row m-2 p-0">
+        <div class="row">
+            <label for="name">Nome</label>
+            <input name="name" type="text" formControlName="name" placeholder="Nome">
+        </div>
     
-    <input type="text" formControlName="name" placeholder="Nome">
-    <input type="text" formControlName="crm" placeholder="CRM">
+        <div class="row">
+            <label for="crm">CRM</label>
+            <input name="crm" type="text" formControlName="crm" placeholder="CRM">
+        </div>
+    
+        <div class="row">
+            <button *ngIf="!this.data.id" type="submit">Adicionar profissonal</button>
+            <button *ngIf="!!this.data.id" type="submit">Editar profissonal</button>
+        </div>
+    </div>
+   
 
-    <button *ngIf="!this.data.id" type="submit">Adicionar profissonal</button>
-    <button *ngIf="!!this.data.id" type="submit">Editar profissonal</button>
 </form>

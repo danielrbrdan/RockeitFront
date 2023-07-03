@@ -23,7 +23,7 @@ export class AppointmentsComponent implements OnInit {
       this.appointments = response; 
       let events: { title: string; date: any; eventId: any;}[] = [];
       response.forEach(app => {
-        events.push({title: 'Sr.(a): '+app.patient.name+'. Às: '+app.dateTime, date: app.dateTime, eventId: app.id })
+        events.push({title: 'Sr.(a): '+app.patient.name, date: app.dateTime, eventId: app.id })
       });
       this.calendarOptions.events = events;
     });
@@ -33,7 +33,8 @@ export class AppointmentsComponent implements OnInit {
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this),
     eventClick:this.eventClick.bind(this),
-    events: []
+    events: [],
+    locale: 'pt-br'
   };
 
   handleDateClick(arg: Object) {

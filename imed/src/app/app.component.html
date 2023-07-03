@@ -1,4 +1,17 @@
-<app-menu *ngIf="authService.isLoggedIn$ | async" 
-    [itens]="itens"
-></app-menu>
-<router-outlet></router-outlet>
+<section class="container-fluid m-0 p-0">
+    <div class="col">
+        <div class="row">
+            <app-menu *ngIf="authService.isLoggedIn$ | async" 
+                [itens]="itens"
+            ></app-menu>
+        </div>
+    
+        <div class="row">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section>
+
+
+
+

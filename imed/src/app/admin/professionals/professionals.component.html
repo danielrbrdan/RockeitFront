@@ -1,22 +1,35 @@
 <div class="wrapper">
-    <button (click)="addProfessional()">Adicionar Profissional</button>
-
-    <h1>Profissonais</h1>
-    <div class="cols">
-        <div *ngFor="let professional of professionals;" class="col" ontouchstart="this.classList.toggle('hover');">
-            <div class="container" >
-                <div class="front" style="background-color: #1D1CE5;">
-                    <div class="inner">
-                        <p>{{professional.name}}</p>
+    <div class="row pt-3">
+        <div class="col-sm-8">
+            <h1>Profissonais</h1>
+            
+        </div>
+        <div class="col-sm-1">
+            <button class="add" (click)="addProfessional()">+</button>
+        </div>
+    </div>
+    <div class="cols row">
+        <div *ngFor="let professional of professionals;" class="col-md-3 p-1 m-1 mb-0 ">
+            <div class="m-0 w-100 h-100">
+                <div class="vcard p-2">
+                    <div class="about-photo m-0 p-0">
+                        <img class="about-photo-img m-0 p-0" src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg" width="100px" height="100px" alt="saleh">
                     </div>
-                </div>
-                <div class="back">
-                    <button class="delete-button" (click)="delete(professional.id)">Excluir</button>
+                    <div class="details">
+                        <div class="about-details"> 
+                            <h3>{{professional.name}} </h3>
+                            <p>Tel: {{professional.phone}} </p>
+                        </div>
+                        <div class="row icons">
+                            <div class="col">
+                                <mat-icon (click)="edit(professional)" class="pr-2">edit</mat-icon>
+                            </div>
 
-                    <div class="inner" (click)="edit(professional)">
-                        <p>CRM: {{professional.crm}}</p>
-                        <hr><br>
-                        <p>Clique para editar</p>
+                            <div class="col">
+                                <mat-icon (click)="delete(professional.id)">delete_sweep</mat-icon>
+                            </div>
+                        </div>
+                            
                     </div>
                 </div>
             </div>

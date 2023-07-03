@@ -21,7 +21,7 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard]
   },
   
-  { path: 'config', component: ConfigComponent },
+  { path: 'config', component: ConfigComponent , canActivate: [AuthGuardGuard]},
 ];
 
 @NgModule({

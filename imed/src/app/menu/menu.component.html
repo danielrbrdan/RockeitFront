@@ -1,13 +1,13 @@
-<!-- Start Navigation Bar -->
-<div class="mobile-menu">
-  <i class="fa fa-bars fa-3x js-menu-icon"></i>
+<div class="p-0 m-0">
+  <div class="mobile-menu row pt-2">
+    <i class="fa fa-bars fa-3x js-menu-icon"></i>
+  </div>
+  <nav class="navbar js-navbar row p-0">
+    <ul class="menu p-0 m-0">
+      <li *ngFor="let item of itens" (click)="routing(item.route)">
+        <a>{{item.name}}</a>
+      </li>
+    </ul>
+  </nav>
 </div>
-<nav class="navbar js-navbar">
-  <ul class="menu">
-    <li *ngFor="let item of itens" (click)="routing(item.route)">
-      <a>{{item.name}}</a>
-    </li>
-  </ul>
-</nav>
 
-<!-- End Navigation Bar -->
