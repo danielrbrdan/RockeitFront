@@ -1,0 +1,95 @@
+::ng-deep {
+    .add{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 40px;
+        font-family: "Roboto";
+        border-radius: 50%;
+        background: #FFF;
+        border-radius: 50%;
+        color: #8CC152;
+        border: 1px solid #8CC152;
+        font-size: 40px;
+          position: relative;
+      }
+      .card {
+        background-color: rgb(112, 83, 255);
+    }
+
+    .delete-button {
+        float: right;
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 10px 20px 10px 10px;
+        text-decoration: none;
+        font-size: 40px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+      }
+
+      
+$mainColor: #3992a4;
+$secondColor: #ab986c;
+.vcard {
+  width: 300px;
+  padding:10px;
+  background-color:white;
+  border-radius:25px;
+  overflow:hidden;
+  margin-bottom:10px;
+.about-photo {
+    float: left;
+    margin: 20px;
+    width: 100x;
+  .about-photo-img {
+    border-radius: 50%;
+  }
+ }
+.details{
+   float: left; 
+   width: calc(100% - 220px);
+    margin-left: 30px;
+    color: $mainColor;
+  .about-details{
+    width: 333px;
+    height: 86px;
+  }
+  span{
+    
+    color:$secondColor;
+    margin-top:5px;
+  }
+  p{
+    color:$secondColor;    
+  }
+  
+  }
+  .social-media {
+    text-align:center;
+    margin-top:50px;
+    a {
+      text-decoration: none;
+      color: red;
+    }
+  p > a:hover{
+      color: #d9d9d9;
+      text-decoration:  underline;
+  }
+
+  }
+
+  .icons {
+    cursor: pointer;
+  }
+}
+
+}
+
+

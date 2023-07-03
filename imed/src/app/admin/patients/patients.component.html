@@ -1,0 +1,42 @@
+<div class="wrapper">
+
+    <div class="row pt-3">
+        <div class="col-sm-8">
+            <h1>Pacientes</h1>
+            
+        </div>
+        <div class="col-sm-1">
+            <button class="add" (click)="addPatient()">+</button>
+        </div>
+    </div>
+
+    <div class="cols row">
+        <div *ngFor="let patient of patients;" class="col-md-3 p-1 m-1 mb-0">
+            <div class="m-0 w-100 h-100">
+                <div class="vcard p-2">
+                    <div class="about-photo m-0 p-0">
+                        <img class="about-photo-img m-0 p-0" src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg" width="100px" height="100px" alt="saleh">
+                    </div>
+                    <div class="details">
+                        <div class="about-details"> 
+                            <h3>{{patient.name}} </h3>
+                            <p>Tel: {{patient.phone}} </p>
+                        </div>
+                        <div class="row icons">
+                            <div class="col">
+                                <mat-icon (click)="edit(patient)" class="pr-2">edit</mat-icon>
+                            </div>
+
+                            <div class="col">
+                                <mat-icon (click)="delete(patient.id)">delete_sweep</mat-icon>
+                            </div>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+</div>
+
